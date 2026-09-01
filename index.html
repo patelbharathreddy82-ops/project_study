@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study Streak</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            📚 Study<span>Streak</span>
+        </div>
+
+        <button id="themeBtn" class="theme-btn">
+            🌙
+        </button>
+    </header>
+
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <div>
+                <p class="small-text">WELCOME BACK 👋</p>
+
+                <h1>
+                    Keep learning.
+                    <span>Keep growing.</span>
+                </h1>
+
+                <p class="description">
+                    Build your study habit one day at a time.
+                </p>
+            </div>
+
+            <div class="date-box">
+                <p id="currentDate"></p>
+            </div>
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card streak-card">
+                <div class="stat-icon">🔥</div>
+
+                <div>
+                    <p>Current Streak</p>
+                    <h2 id="streak">0</h2>
+                    <span>days</span>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+
+                <div>
+                    <p>Total Study Time</p>
+                    <h2 id="totalHours">0</h2>
+                    <span>hours</span>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">📅</div>
+
+                <div>
+                    <p>Study Sessions</p>
+                    <h2 id="sessionCount">0</h2>
+                    <span>sessions</span>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+
+                <div>
+                    <p>Achievements</p>
+                    <h2 id="badgeCount">0</h2>
+                    <span>unlocked</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Dashboard Grid -->
+        <section class="dashboard">
+
+
+            <!-- Daily Goal -->
+            <div class="card goal-card">
+
+                <div class="card-header">
+                    <div>
+                        <p class="card-label">TODAY'S GOAL</p>
+                        <h2>Study Progress</h2>
+                    </div>
+
+                    <span id="goalPercentage">0%</span>
+                </div>
+
+
+                <div class="progress-container">
+                    <div
+                        class="progress-bar"
+                        id="progressBar">
+                    </div>
+                </div>
+
+
+                <div class="goal-info">
+                    <span>
+                        <strong id="todayMinutes">0</strong> min studied
+                    </span>
+
+                    <span>
+                        Goal:
+                        <strong id="goalMinutes">120</strong> min
+                    </span>
+                </div>
+
+
+                <div class="goal-setting">
+
+                    <label for="goalInput">
+                        Daily goal (minutes)
+                    </label>
+
+                    <div class="goal-input-row">
+
+                        <input
+                            type="number"
+                            id="goalInput"
+                            min="10"
+                            value="120">
+
+                        <button id="saveGoalBtn">
+                            Save Goal
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Add Study Session -->
+            <div class="card">
+
+                <div class="card-header">
+                    <div>
+                        <p class="card-label">TRACK YOUR WORK</p>
+                        <h2>Add Study Session</h2>
+                    </div>
+
+                    <span class="card-emoji">⏱️</span>
+                </div>
+
+
+                <form id="studyForm">
+
+                    <div class="form-group">
+
+                        <label for="subject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subject"
+                            placeholder="e.g. JavaScript"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="minutes">
+                            Study Time (minutes)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="minutes"
+                            min="1"
+                            placeholder="e.g. 60"
+                            required>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+
+                        + Add Study Session
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- Weekly Chart -->
+            <div class="card weekly-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <p class="card-label">
+                            YOUR ACTIVITY
+                        </p>
+
+                        <h2>This Week</h2>
+                    </div>
+
+                    <span class="card-emoji">📊</span>
+
+                </div>
+
+
+                <div class="chart" id="weeklyChart">
+
+                    <!-- JavaScript will create bars here -->
+
+                </div>
+
+            </div>
+
+
+            <!-- Achievements -->
+            <div class="card achievements-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <p class="card-label">
+                            MILESTONES
+                        </p>
+
+                        <h2>Achievements</h2>
+                    </div>
+
+                    <span class="card-emoji">🏆</span>
+
+                </div>
+
+
+                <div
+                    class="badges"
+                    id="badges">
+
+                    <!-- JavaScript will create badges -->
+
+                </div>
+
+            </div>
+
+
+            <!-- Learning Journal -->
+            <div class="card journal-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <p class="card-label">
+                            LEARNING JOURNAL
+                        </p>
+
+                        <h2>What did you learn?</h2>
+                    </div>
+
+                    <span class="card-emoji">📝</span>
+
+                </div>
+
+
+                <form id="journalForm">
+
+                    <div class="form-group">
+
+                        <label for="journalText">
+                            Today's learning
+                        </label>
+
+                        <textarea
+                            id="journalText"
+                            placeholder="Write something you learned today..."
+                            required>
+                        </textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+
+                        Save Journal Entry
+
+                    </button>
+
+                </form>
+
+
+                <div
+                    class="journal-list"
+                    id="journalList">
+
+                    <!-- Journal entries appear here -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            Built with ❤️ using HTML, CSS & JavaScript
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
